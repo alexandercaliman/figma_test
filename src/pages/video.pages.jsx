@@ -1,53 +1,21 @@
 import './video.scss';
 
+const videoUrls = ["http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com", "https://www.youtube.com/embed/Z1Yd7upQsXY", "https://www.youtube.com/embed/qDkCHe4wi0Y"]
+
 const VideoPage = () => {
   return(
-    <div className="page">
-        <iframe id="ytplayer"
+    <div className="container">
+      {videoUrls.map((item, index) => 
+      <div className="video_container" key={index}>
+      <iframe id="ytplayer"
+      height="100%"
+      width='100%'
           type="text/html"
-          width='468px'
-          height='266px'
-          src="http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
-          frameborder="0"
-        />
-        <iframe id="ytplayer"
-          type="text/html"
-          width='468px'
-          height='266px'
-          src="http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
-          frameborder="0"
-        />
-        <iframe id="ytplayer"
-          type="text/html"
-          width='468px'
-          height='266px'
-          src="http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
-          frameborder="0"
-        />
-      {/* <div className="container">
-        <iframe id="ytplayer"
-          type="text/html"
-          className="responsive-iframe"
-          src="http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
+          src={item}
           frameborder="0"
         />
       </div>
-      <div className="container">
-        <iframe id="ytplayer"
-          type="text/html"
-          className="responsive-iframe"
-          src="http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
-          frameborder="0"
-        />
-      </div>
-      <div className="container">
-        <iframe id="ytplayer"
-          type="text/html"
-          className="responsive-iframe"
-          src="http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
-          frameborder="0"
-        />
-      </div> */}
+      )}
     </div>
   )
 };
